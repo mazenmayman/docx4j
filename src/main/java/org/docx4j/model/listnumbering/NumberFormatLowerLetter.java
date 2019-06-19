@@ -9,9 +9,14 @@ public class NumberFormatLowerLetter extends NumberFormat
 	
 	public String format( int in )
 	{
-		char result = Character.forDigit(in + 9, 36);
-		log.debug(in + " --> " + result);
-		
-		return Character.toString(result);		
+		StringBuilder out = new StringBuilder();
+		int num = (in % 26 > 0) ? (in % 26) : 26; // for z
+		int count = (int) java.lang.Math.ceil((double) in / 26);
+		while(count > 0)
+		{
+			out.append(Character.forDigit(num+9, 36));
+			count--;
+		}
+		return out.toString();
 	}
 }

@@ -35,5 +35,10 @@ public class NumberFormatLowerLetterTest
 		assertEquals(format.format(10), "j");
 		assertEquals(format.format(11), "k");
 		assertEquals(format.format(26), "z");
+		assertEquals(format.format(27), "aa");
+		assertEquals(format.format(28), "bb");
+		assertEquals(format.format(52), "zz");
+		assertEquals(format.format(53), "aaa");
+		assertEquals(format.format(54), "bbb");
 	}
 }
